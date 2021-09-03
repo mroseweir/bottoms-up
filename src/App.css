@@ -1,38 +1,182 @@
 .App {
   text-align: center;
+  background-color: rgb(0, 0, 0);
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.body {
+  background-color: rgb(0, 0, 0);
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+/* Handles styling for the Nav Bar */
+nav {
+  position: fixed;
+  top: 0;
+  height: 7vh;
+  width: 100vw;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  background-color: #3b0000;
+}
+.nav-list {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-right: 5vw;
+  margin-left: 5vw;
+  font-family: "Abel", sans-serif;
+  font-size: 15pt;
+}
+.nav-items {
+  list-style: none;
+  width: 75px;
+}
+.nav-link {
+  text-decoration: none;
+  color: rgb(250, 250, 250);
+  padding: 5px;
+}
+.nav-link:hover {
+  color: #ffffff;
+  border: solid white 1px;
+  border-radius: 5px;
+}
+
+/* Handles styling for the Home Page */
+.homeContainer {
+  padding-top: 5vh;
+  background-color: rgb(0, 0, 0);
+  height: 100vh;
+}
+.mainHeader {
+  padding-top: 7vh;
+  font-family: "Abel", sans-serif;
+  font-size: 48pt;
+  color: rgb(255, 255, 255);
+}
+.cocktailGlass {
+  padding-top: 7vh;
+  height: 350px;
+  filter: invert(40%) sepia(0%) saturate(919%) hue-rotate(268deg)
+    brightness(97%) contrast(87%);
+}
+.randInfo {
+  padding-top: 7vh;
+  font-family: "Abel", sans-serif;
+  color: #ffffff;
+}
+
+/* Handles styling for the Search Page */
+.searchContainer {
+  padding-top: 5vh;
+  background-color: rgb(0, 0, 0);
+  height: 100vh;
+}
+
+/* Handles styling for the Favorites Page */
+.favoritesContainer {
+  padding-top: 5vh;
+  background-color: rgb(0, 0, 0);
+  height: 100vh;
+}
+
+/* Handles styling for the Random Page */
+.randomContainer {
+  padding-top: 5vh;
+  background-color: rgb(0, 0, 0);
+  height: 100vh;
+}
+.randomHeader {
+  padding-top: 7vh;
+  font-family: "Abel", sans-serif;
+  font-size: 32pt;
+  color: rgb(255, 255, 255);
+}
+.randBtn {
+  background-color: transparent;
+  color: rgb(255, 255, 255);
+  border: 2px solid white;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  border-radius: 5px;
+  font-family: "Abel", sans-serif;
+  font-size: 16pt;
+}
+.randBtn:hover {
+  background-color: #ffae00;
+  color: black;
+  cursor: pointer;
+}
+.randDrinkContainer {
+  display: flex;
+  margin: auto;
+  margin-top: 5vh;
+  width: 80vw;
+  height: 60vh;
+  /* border: 1px solid rgba(255, 255, 255, 0.5); */
+  border-radius: 5px;
+  justify-content: space-around;
+}
+.randDrinkPhoto {
+  display: flex;
+  margin: auto;
+  width: 500px;
+  height: 500px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 5px;
+}
+.randImg {
+  width: 450px;
+  height: 450px;
+  margin: auto;
+}
+.randDrinkInfo {
   color: white;
+  margin: auto;
+  width: 50%;
+  /* height: 90%; */
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 5px;
+}
+.randDrinkName {
+  margin-top: 50px;
+  color: #ffae00;
+  font-family: "Abel", sans-serif;
+}
+.randInstructions {
+  padding-top: 25px;
+  padding-bottom: 50px;
+  color: white;
+  width: 75%;
+  margin: auto;
+  font-family: "abel", sans-serif;
+}
+.randIngredientsList {
+  /* display: inline; */
+  text-align: center;
+  list-style: none;
+  padding-right: 6%;
+}
+.randFaveBtn {
+  background-color: transparent;
+  color: rgb(255, 255, 255);
+  border: 2px solid white;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  border-radius: 5px;
+  font-family: "Abel", sans-serif;
+  font-size: 12pt;
+  margin-bottom: 15px;
+}
+.randFaveBtn:hover {
+  background-color: #ffae00;
+  color: black;
+  cursor: pointer;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Handles styling for the Login */
+.loginContainer {
+  padding-top: 5vh;
+  background-color: rgb(0, 0, 0);
+  height: 100vh;
 }

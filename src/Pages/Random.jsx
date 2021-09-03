@@ -21,6 +21,10 @@ function Random() {
     });
   }
 
+  function addFavorite() {
+    alert("Added to favorites!");
+  }
+
   return (
     <div className="randomContainer">
       <div>
@@ -88,7 +92,14 @@ function Random() {
                 </ul>
                 <h3 className="randInstructions">{drink[0].strInstructions}</h3>
                 <div>
-                  <button className="randFaveBtn">Add To Favorites</button>
+                  <button
+                    className="randFaveBtn"
+                    onClick={(e) => {
+                      addFavorite();
+                    }}
+                  >
+                    Add To Favorites
+                  </button>
                 </div>
               </div>
             </div>

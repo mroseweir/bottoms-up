@@ -9,10 +9,10 @@
 nav {
   position: fixed;
   top: 0;
-  height: 7vh;
+  height: 65px;
   width: 100vw;
   justify-content: center;
-  background-color: #3b0000;
+  background-color: #a8d4b9;
 }
 .nav-list {
   display: flex;
@@ -29,7 +29,7 @@ nav {
 }
 .nav-link {
   text-decoration: none;
-  color: rgb(250, 250, 250);
+  color: rgb(0, 0, 0);
   padding: 5px;
 }
 .nav-link:hover {
@@ -40,58 +40,78 @@ nav {
 
 /* Handles styling for the Home Page */
 .homeContainer {
-  padding-top: 5vh;
-  background-color: rgb(0, 0, 0);
-  height: 100vh;
+  background-color: #69b1ec;
+  height: 96vh;
 }
 .mainHeader {
-  padding-top: 7vh;
+  padding-top: 85px;
   font-family: "Abel", sans-serif;
   font-size: 48pt;
-  color: rgb(255, 255, 255);
+  color: #000000;
 }
 .cocktailGlass {
   padding-top: 7vh;
   height: 350px;
-  filter: invert(40%) sepia(0%) saturate(919%) hue-rotate(268deg)
-    brightness(97%) contrast(87%);
+  /* filter: invert(71%) sepia(0%) saturate(1077%) hue-rotate(141deg)
+    brightness(87%) contrast(83%); */
 }
 .randInfo {
   padding-top: 7vh;
   font-family: "Abel", sans-serif;
-  color: #ffffff;
+  color: #000000;
 }
 
 /* Handles styling for the Search Page */
 .searchContainer {
-  padding-top: 5vh;
-  background-color: rgb(0, 0, 0);
+  background-color: #69b1ec;
   height: 100vh;
+}
+.searchHeader {
+  padding-top: 85px;
+  color: rgb(0, 0, 0);
+}
+.searchInput {
+  background-color: transparent;
+  border: 2px solid white;
+  border-radius: 5px;
+  height: 36px;
+}
+.submitInput {
+  background-color: transparent;
+  color: rgb(255, 255, 255);
+  border: 2px solid white;
+  border-radius: 5px;
+  height: 40px;
+}
+.submitInput:hover {
+  background-color: #ffae00;
+  color: black;
+  cursor: pointer;
 }
 
 /* Handles styling for the Favorites Page */
 .favoritesContainer {
   padding-top: 5vh;
-  background-color: rgb(0, 0, 0);
+  background-color: #69b1ec;
   height: 100vh;
 }
 
 /* Handles styling for the Random Page */
 .randomContainer {
   padding-top: 5vh;
-  background-color: rgb(0, 0, 0);
+  background-color: #69b1ec;
   height: 100vh;
 }
 .randomHeader {
   padding-top: 7vh;
   font-family: "Abel", sans-serif;
   font-size: 32pt;
-  color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
 }
 .randBtn {
   background-color: transparent;
-  color: rgb(255, 255, 255);
-  border: 2px solid white;
+  color: rgb(0, 0, 0);
+  border: 2px solid rgb(0, 0, 0);
   padding-left: 10px;
   padding-right: 10px;
   padding-top: 4px;
@@ -101,7 +121,7 @@ nav {
   font-size: 16pt;
 }
 .randBtn:hover {
-  background-color: #ffae00;
+  background-color: #fecca8;
   color: black;
   cursor: pointer;
 }
@@ -111,7 +131,6 @@ nav {
   margin-top: 5vh;
   width: 80vw;
   height: 60vh;
-  /* border: 1px solid rgba(255, 255, 255, 0.5); */
   border-radius: 5px;
   justify-content: space-around;
 }
@@ -120,45 +139,45 @@ nav {
   margin: auto;
   width: 500px;
   height: 500px;
-  border: 1px solid rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(0, 0, 0, 0.5);
   border-radius: 5px;
 }
 .randImg {
   width: 450px;
   height: 450px;
+  border-radius: 5px;
   margin: auto;
 }
 .randDrinkInfo {
-  color: white;
+  color: rgb(0, 0, 0);
   margin: auto;
   width: 50%;
   /* height: 90%; */
-  border: 1px solid rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(0, 0, 0, 0.5);
   border-radius: 5px;
 }
 .randDrinkName {
-  margin-top: 50px;
-  color: #ffae00;
+  margin-top: 25px;
+  color: #000000;
   font-family: "Abel", sans-serif;
 }
 .randInstructions {
   padding-top: 25px;
   padding-bottom: 50px;
-  color: white;
+  color: rgb(0, 0, 0);
   width: 75%;
   margin: auto;
   font-family: "abel", sans-serif;
 }
 .randIngredientsList {
-  /* display: inline; */
   text-align: center;
   list-style: none;
   padding-right: 6%;
 }
 .randFaveBtn {
   background-color: transparent;
-  color: rgb(255, 255, 255);
-  border: 2px solid white;
+  color: rgb(0, 0, 0);
+  border: 2px solid rgb(0, 0, 0);
   padding-left: 10px;
   padding-right: 10px;
   padding-top: 4px;
@@ -166,10 +185,10 @@ nav {
   border-radius: 5px;
   font-family: "Abel", sans-serif;
   font-size: 12pt;
-  margin-bottom: 15px;
+  margin-bottom: 25px;
 }
 .randFaveBtn:hover {
-  background-color: #ffae00;
+  background-color: #fecca8;
   color: black;
   cursor: pointer;
 }
@@ -177,6 +196,6 @@ nav {
 /* Handles styling for the Login */
 .loginContainer {
   padding-top: 5vh;
-  background-color: rgb(0, 0, 0);
+  background-color: #69b1ec;
   height: 100vh;
 }

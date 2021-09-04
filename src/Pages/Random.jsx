@@ -15,10 +15,19 @@ function Random() {
   }, []);
 
   function getIt() {
-    axios.get(`${baseURL}/random.php`).then((res) => {
-      let randDrink = res.data.drinks;
-      setDrink(randDrink);
-    });
+    axios
+      .get(`${baseURL}/random.php`)
+      .then((res) => {
+        let randDrink = res.data.drinks;
+        setDrink(randDrink);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }
+
+  function addFavorite() {
+    alert("Added to favorites!");
   }
 
   return (
@@ -88,7 +97,14 @@ function Random() {
                 </ul>
                 <h3 className="randInstructions">{drink[0].strInstructions}</h3>
                 <div>
-                  <button className="randFaveBtn">Add To Favorites</button>
+                  <button
+                    className="randFaveBtn"
+                    onClick={(e) => {
+                      addFavorite();
+                    }}
+                  >
+                    Add To Favorites
+                  </button>
                 </div>
               </div>
             </div>

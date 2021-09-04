@@ -8,27 +8,43 @@ function Header() {
         <nav>
           <ul className="nav-list">
             <li className="nav-items">
-              <Link className="nav-link" to="/">
+              <Link className="nav-link" activeClassName="active-link" to="/">
                 Home
               </Link>
             </li>
             <li className="nav-items">
-              <NavLink className="nav-link" to="/Search">
+              <NavLink
+                className="nav-link"
+                activeClassName="active-link"
+                to="/Search"
+              >
                 Search
               </NavLink>
             </li>
             <li className="nav-items">
-              <NavLink className="nav-link" to="/Favorites">
+              <NavLink
+                className="nav-link"
+                activeClassName="active-link"
+                to="/Favorites"
+              >
                 Favorites
               </NavLink>
             </li>
             <li className="nav-items">
-              <NavLink className="nav-link" to="/Random">
+              <NavLink
+                className="nav-link"
+                activeClassName="active-link"
+                to="/Random"
+              >
                 Random
               </NavLink>
             </li>
             <li className="nav-items">
-              <NavLink className="nav-link" to="/Login">
+              <NavLink
+                className="nav-link"
+                activeClassName="active-link"
+                to="/Login"
+              >
                 Login
               </NavLink>
             </li>

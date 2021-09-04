@@ -149,7 +149,7 @@ function Search() {
         {complete ? (
           <div className="tempResults">
             <p className="tempInstruction">enter ingredient above to search</p>
-            <img src={gif3} alt="" className="cocktailGlass" />
+            <img src={gif3} alt="" className="cocktailGlass2" />
           </div>
         ) : (
           <div>

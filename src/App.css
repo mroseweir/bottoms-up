@@ -6,6 +6,9 @@
   background-color: rgb(0, 0, 0);
 }
 /* Handles styling for the Nav Bar */
+/* Handles styling for the Nav Bar */
+/* Handles styling for the Nav Bar */
+
 nav {
   position: fixed;
   top: 0;
@@ -39,6 +42,9 @@ nav {
 }
 
 /* Handles styling for the Home Page */
+/* Handles styling for the Home Page */
+/* Handles styling for the Home Page */
+
 .homeContainer {
   background-color: #69b1ec;
   height: 96vh;
@@ -52,8 +58,6 @@ nav {
 .cocktailGlass {
   padding-top: 7vh;
   height: 350px;
-  /* filter: invert(71%) sepia(0%) saturate(1077%) hue-rotate(141deg)
-    brightness(87%) contrast(83%); */
 }
 .randInfo {
   padding-top: 7vh;
@@ -62,34 +66,157 @@ nav {
 }
 
 /* Handles styling for the Search Page */
+/* Handles styling for the Search Page */
+/* Handles styling for the Search Page */
+
 .searchContainer {
-  background-color: #69b1ec;
+  background-color: #ffc444;
   height: 100vh;
 }
 .searchHeader {
   padding-top: 85px;
-  color: rgb(0, 0, 0);
+  color: #fb5161;
+}
+.searchInputContainer {
+  padding-top: 85px;
 }
 .searchInput {
-  background-color: transparent;
-  border: 2px solid white;
+  background-color: rgba(0, 0, 0, 0.13);
+  border: 2px solid #fb5161;
   border-radius: 5px;
   height: 36px;
+  text-align: center;
+  margin: 25px;
+  width: 25vw;
+}
+.searchInput::placeholder {
+  color: #3973fd;
+  font-family: "Abel", sans-serif;
+  font-size: 12pt;
 }
 .submitInput {
   background-color: transparent;
-  color: rgb(255, 255, 255);
-  border: 2px solid white;
+  color: #3973fd;
+  border: 2px solid #fb5161;
   border-radius: 5px;
   height: 40px;
+  width: 100px;
+  margin-left: 25px;
+  margin-right: 25px;
+  font-family: "Abel", sans-serif;
+  font-size: 18pt;
 }
 .submitInput:hover {
   background-color: #ffae00;
   color: black;
   cursor: pointer;
 }
+.tempInstruction {
+  color: #3973fd;
+  border: 2px solid #fb5161;
+  border-radius: 5px;
+  width: 25vw;
+  margin: auto;
+  margin-top: 25px;
+  justify-content: center;
+  font-family: "Abel", sans-serif;
+  font-size: 24pt;
+}
+.resultsContainer {
+  background-color: #ffc444;
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 75px;
+  padding-right: 75px;
+  padding-bottom: 25px;
+  margin: auto;
+}
+.resultsCard {
+  margin: 50px;
+  border: 2px solid #fb5161;
+  width: 500px;
+  margin: auto;
+  margin-top: 25px;
+  /* margin-left: 10px; */
+  border-radius: 10px;
+}
+.searchImg {
+  padding: 10px;
+  width: 350px;
+  height: 350px;
+}
+.searchDrinkName {
+  color: #000000;
+  font-family: "Abel", sans-serif;
+  font-size: 18pt;
+}
+.instructionsBtn {
+  background-color: transparent;
+  border: 2px solid black;
+  border-radius: 5px;
+  font-family: "Abel", sans-serif;
+  font-size: 12pt;
+  margin-bottom: 10px;
+}
+.instructionsBtn:hover {
+  background-color: #ffae00;
+  color: black;
+  cursor: pointer;
+}
+.instructionsContainer {
+  width: 100vw;
+}
+.instructionsPopup {
+  position: fixed;
+  width: 50vw;
+  background-color: #ffae00;
+  border: 2px solid black;
+  border-radius: 5px;
+  box-shadow: 0 0 40px 20px rgba(0, 0, 0, 0.418);
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+.searchDrinkName {
+  margin-top: 25px;
+  color: #000000;
+  font-family: "Abel", sans-serif;
+}
+.searchIngredientsList {
+  text-align: center;
+  list-style: none;
+  padding-right: 6%;
+}
+.searchInstructions {
+  padding-top: 25px;
+  padding-bottom: 50px;
+  color: rgb(0, 0, 0);
+  width: 75%;
+  margin: auto;
+  font-family: "abel", sans-serif;
+}
+.searchFaveBtn {
+  background-color: transparent;
+  color: rgb(0, 0, 0);
+  border: 2px solid rgb(0, 0, 0);
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  border-radius: 5px;
+  font-family: "Abel", sans-serif;
+  font-size: 12pt;
+  margin-bottom: 25px;
+}
+.searchFaveBtn:hover {
+  background-color: #fecca8;
+  color: black;
+  cursor: pointer;
+}
 
 /* Handles styling for the Favorites Page */
+/* Handles styling for the Favorites Page */
+/* Handles styling for the Favorites Page */
+
 .favoritesContainer {
   padding-top: 5vh;
   background-color: #69b1ec;
@@ -97,6 +224,9 @@ nav {
 }
 
 /* Handles styling for the Random Page */
+/* Handles styling for the Random Page */
+/* Handles styling for the Random Page */
+
 .randomContainer {
   padding-top: 5vh;
   background-color: #69b1ec;
@@ -194,6 +324,9 @@ nav {
 }
 
 /* Handles styling for the Login */
+/* Handles styling for the Login */
+/* Handles styling for the Login */
+
 .loginContainer {
   padding-top: 5vh;
   background-color: #69b1ec;

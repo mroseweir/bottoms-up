@@ -15,10 +15,15 @@ function Random() {
   }, []);
 
   function getIt() {
-    axios.get(`${baseURL}/random.php`).then((res) => {
-      let randDrink = res.data.drinks;
-      setDrink(randDrink);
-    });
+    axios
+      .get(`${baseURL}/random.php`)
+      .then((res) => {
+        let randDrink = res.data.drinks;
+        setDrink(randDrink);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   }
 
   function addFavorite() {

@@ -9,6 +9,7 @@ function Search() {
   const [input, setInput] = useState("");
   const [complete, setComplete] = useState(true);
   const [instructions, setInstructions] = useState(true);
+  const [comment, setComment] = useState("");
 
   const baseURL = "https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=";
   const searchURL = "https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=";
@@ -32,6 +33,21 @@ function Search() {
           setComplete(false);
         }
       });
+      if (input.toLowerCase() === "tequila") {
+        setComment("Tequila??? Rough.");
+      } else if (input.toLowerCase() === "vodka") {
+        setComment("WOOHOOOOO VODKA!");
+      } else if (input.toLowerCase() === "gin") {
+        setComment("Clearly you're an individual of good taste.");
+      } else if (input.toLowerCase() === "rum") {
+        setComment("Cpt. Jack would agree.");
+      } else if (input.toLowerCase() === "whiskey") {
+        setComment("In a fighting mood today, huh?");
+      } else if (input.toLowerCase() === "milk") {
+        setComment("The dude abides.");
+      } else {
+        setComment(`${input}, solid choice.`);
+      }
     }
   }
 
@@ -153,7 +169,7 @@ function Search() {
           </div>
         ) : (
           <div>
-            <p className="tempInstruction">{input} is an excellent choice!</p>
+            <div className="tempComment">{comment}</div>
             <div className="resultsContainer">
               {results.map((drink, index) => (
                 <div key={results[index].id} className="resultsCard">

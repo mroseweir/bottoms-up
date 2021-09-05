@@ -93,6 +93,8 @@ nav {
   text-align: center;
   margin: 25px;
   width: 25vw;
+  font-family: "Abel", sans-serif;
+  font-size: 18pt;
 }
 .searchInput::placeholder {
   color: black;
@@ -127,11 +129,25 @@ nav {
   font-family: "Abel", sans-serif;
   font-size: 24pt;
 }
+.tempComment {
+  color: black;
+  border: 2px solid black;
+  border-radius: 5px;
+  width: fit-content;
+  margin: auto;
+  margin-top: 25px;
+  justify-content: center;
+  font-family: "Abel", sans-serif;
+  font-size: 24pt;
+  padding-left: 15px;
+  padding-right: 15px;
+}
 .cocktailGlass2 {
   margin-top: 115px;
   height: 400px;
   border-radius: 500px;
-  box-shadow: 0 0 50px 50px #ffc444;
+  /* border: 3px solid#ffc444; */
+  box-shadow: 0 0 10px 15px #ffc444;
 }
 .resultsContainer {
   background-color: #69b1ec;
@@ -166,7 +182,7 @@ nav {
   border: 2px solid black;
   border-radius: 5px;
   font-family: "Abel", sans-serif;
-  font-size: 12pt;
+  font-size: 16pt;
   margin-bottom: 10px;
 }
 .instructionsBtn:hover {
@@ -180,7 +196,7 @@ nav {
 .instructionsPopup {
   position: fixed;
   width: 50vw;
-  background-color: #69b1ec;
+  background-color: #5087b4;
   border: 2px solid black;
   border-radius: 5px;
   box-shadow: 0 0 40px 20px rgba(0, 0, 0, 0.418);

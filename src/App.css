@@ -102,7 +102,10 @@ nav {
   font-size: 12pt;
 }
 .submitInput {
-  background-color: transparent;
+  background: linear-gradient(45deg, #ffae00 40%, transparent 50%);
+  background-size: 300% 100%;
+  background-position: right bottom;
+  transition: ease-out 0.3s;
   color: black;
   border: 2px solid black;
   border-radius: 5px;
@@ -114,9 +117,11 @@ nav {
   font-size: 18pt;
 }
 .submitInput:hover {
-  background-color: #ffae00;
+  /* background-color: #ffae00; */
   color: black;
   cursor: pointer;
+  background-position: left bottom;
+  transition: ease-in 0.2s;
 }
 .tempInstruction {
   color: black;
@@ -178,17 +183,23 @@ nav {
   font-size: 18pt;
 }
 .instructionsBtn {
-  background-color: transparent;
+  /* background-color: transparent; */
   border: 2px solid black;
   border-radius: 5px;
   font-family: "Abel", sans-serif;
   font-size: 16pt;
   margin-bottom: 10px;
+  background: linear-gradient(45deg, #ffae00 50%, transparent 50%);
+  background-size: 300% 100%;
+  background-position: right bottom;
+  transition: ease-out 0.2s;
 }
 .instructionsBtn:hover {
   background-color: #ffae00;
   color: black;
   cursor: pointer;
+  background-position: left bottom;
+  transition: ease-in 0.2s;
 }
 .instructionsContainer {
   width: 100vw;
@@ -204,6 +215,7 @@ nav {
   transform: translate(-50%, 0);
 }
 .searchDrinkName {
+  width: 100%;
   margin-top: 25px;
   color: #000000;
   font-family: "Abel", sans-serif;
@@ -222,7 +234,10 @@ nav {
   font-family: "abel", sans-serif;
 }
 .searchFaveBtn {
-  background-color: transparent;
+  background: linear-gradient(45deg, #ffae00 40%, transparent 50%);
+  background-size: 300% 100%;
+  background-position: right bottom;
+  transition: ease-out 0.3s;
   color: rgb(0, 0, 0);
   border: 2px solid rgb(0, 0, 0);
   padding-left: 10px;
@@ -235,6 +250,27 @@ nav {
   margin-bottom: 25px;
 }
 .searchFaveBtn:hover {
+  background-position: left bottom;
+  transition: ease-in 0.2s;
+  color: black;
+  cursor: pointer;
+}
+.searchCloseBtn {
+  /* display: flex-end; */
+
+  background-color: transparent;
+  color: rgb(0, 0, 0);
+  border: 2px solid rgb(0, 0, 0);
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  border-radius: 5px;
+  font-family: "Abel", sans-serif;
+  font-size: 12pt;
+  margin-bottom: 25px;
+}
+.searchCloseBtn:hover {
   background-color: #fecca8;
   color: black;
   cursor: pointer;
@@ -266,7 +302,10 @@ nav {
   color: rgb(0, 0, 0);
 }
 .randBtn {
-  background-color: transparent;
+  background: linear-gradient(45deg, #ffae00 40%, transparent 50%);
+  background-size: 300% 100%;
+  background-position: right bottom;
+  transition: ease-out 0.3s;
   color: rgb(0, 0, 0);
   border: 2px solid rgb(0, 0, 0);
   padding-left: 10px;
@@ -278,7 +317,8 @@ nav {
   font-size: 16pt;
 }
 .randBtn:hover {
-  background-color: #fecca8;
+  background-position: left bottom;
+  transition: ease-in 0.2s;
   color: black;
   cursor: pointer;
 }
@@ -332,7 +372,10 @@ nav {
   padding-right: 6%;
 }
 .randFaveBtn {
-  background-color: transparent;
+  background: linear-gradient(45deg, #ffae00 40%, transparent 50%);
+  background-size: 300% 100%;
+  background-position: right bottom;
+  transition: ease-out 0.3s;
   color: rgb(0, 0, 0);
   border: 2px solid rgb(0, 0, 0);
   padding-left: 10px;
@@ -345,7 +388,8 @@ nav {
   margin-bottom: 25px;
 }
 .randFaveBtn:hover {
-  background-color: #fecca8;
+  background-position: left bottom;
+  transition: ease-in 0.2s;
   color: black;
   cursor: pointer;
 }

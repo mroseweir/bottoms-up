@@ -34,7 +34,7 @@ function Search() {
         }
       });
       if (input.toLowerCase() === "tequila") {
-        setComment("Tequila??? Rough.");
+        setComment("Tequila? Rough.");
       } else if (input.toLowerCase() === "vodka") {
         setComment("WOOHOOOOO VODKA!");
       } else if (input.toLowerCase() === "gin") {

@@ -93,7 +93,7 @@ function Search() {
             Submit
           </button>
           <button className="submitInput" onClick={() => clear()}>
-            Clear
+            Reset
           </button>
         </div>
       </div>

@@ -177,6 +177,7 @@ function Search() {
                   <img
                     src={`${results[index].strDrinkThumb}`}
                     className="searchImg"
+                    alt="uh oh, gif no load"
                   ></img>
                   <div>
                     <button

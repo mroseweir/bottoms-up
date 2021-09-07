@@ -52,6 +52,7 @@ function Random() {
                 <img
                   src={`${drink[0].strDrinkThumb}`}
                   className="randImg"
+                  alt="uh oh, img no load"
                 ></img>
               </div>
               <div className="randDrinkInfo">

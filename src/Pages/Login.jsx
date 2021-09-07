@@ -7,16 +7,31 @@ function Login() {
 
   const [signUsername, setSignUsername] = useState("");
   const [signPassword, setSignPassword] = useState("");
-  const [signConPassword, setSignConPassword] = useState("");
+  const [signConfPassword, setSignConfPassword] = useState("");
 
   const [signUp, setSignUp] = useState(true);
+  const [signUpConfirm, setSignUpConfirm] = useState(true);
 
   function handleChangeUser(a) {
     setLogUsername(a);
   }
+
   function handleChangePass(b) {
     setLogPassword(b);
   }
+
+  function handleChangeLogUser(c) {
+    setSignUsername(c);
+  }
+
+  function handleChangeLogPass(d) {
+    setSignPassword(d);
+  }
+
+  function handleChangeLogConfPass(e) {
+    setSignConfPassword(e);
+  }
+
   function login() {
     console.log(logUsername);
     console.log(logPassword);
@@ -25,8 +40,17 @@ function Login() {
   function signUpBtn() {
     setSignUp(false);
   }
-  function signUpConfirm() {
+
+  function returnLogin() {
+    setSignUpConfirm(true);
+  }
+
+  function createAccount() {
+    console.log(signUsername);
+    console.log(signPassword);
+    console.log(signConfPassword);
     setSignUp(true);
+    setSignUpConfirm(false);
   }
 
   return (
@@ -44,18 +68,33 @@ function Login() {
                   <input
                     className="signInputForm"
                     placeholder="username"
+                    onChange={(e) => handleChangeLogUser(e.target.value)}
                   ></input>
                   <input
                     className="signInputForm"
                     placeholder="password"
+                    onChange={(e) => handleChangeLogPass(e.target.value)}
                   ></input>
                   <input
                     className="signInputForm"
                     placeholder="confirm password"
+                    onChange={(e) => handleChangeLogConfPass(e.target.value)}
                   ></input>
                 </div>
-                <button className="signUpBtn" onClick={() => signUpConfirm()}>
+                <button className="signUpBtn" onClick={() => createAccount()}>
                   Create Account
+                </button>
+              </div>
+            )}
+          </div>
+          <div>
+            {signUpConfirm ? null : (
+              <div className="signUpConfirmation">
+                <h1 className="confirmationHeader">
+                  Account Created Successfully!
+                </h1>
+                <button className="returnBtn" onClick={() => returnLogin()}>
+                  Return to Login
                 </button>
               </div>
             )}

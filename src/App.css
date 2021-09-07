@@ -492,3 +492,31 @@ nav {
   font-family: "Abel", sans-serif;
   cursor: pointer;
 }
+.signUpConfirmation {
+  position: fixed;
+  height: 350px;
+  width: 450px;
+  padding-left: 50px;
+  padding-right: 50px;
+  background-color: #69b1ec;
+  border: 2px solid black;
+  border-radius: 5px;
+  box-shadow: 0 0 40px 20px rgba(0, 0, 0, 0.418);
+  left: 50%;
+  transform: translate(-50%, 0);
+  top: 30%;
+}
+.confirmationHeader {
+  padding-top: 90px;
+  font-family: "Abel", sans-serif;
+}
+.returnBtn {
+  margin-top: 15px;
+  width: 120px;
+  height: 25px;
+  background-color: transparent;
+  border: 2px solid black;
+  border-radius: 5px;
+  font-family: "Abel", sans-serif;
+  cursor: pointer;
+}

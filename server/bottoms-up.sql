@@ -24,3 +24,4 @@ ALTER TABLE "favorites" ADD CONSTRAINT "favorites_fk0" FOREIGN KEY ("userid") RE
 ALTER TABLE "ratings" ADD CONSTRAINT "ratings_fk0" FOREIGN KEY ("userid") REFERENCES "users"("id");
 ALTER TABLE "ratings" ADD CONSTRAINT "ratings_fk1" FOREIGN KEY ("drinkid") REFERENCES "favorites"("drinkid");
 
+INSERT INTO users (name, username, password) VALUES ('Michael', 'mroseweir', 'test');

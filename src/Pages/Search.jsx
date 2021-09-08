@@ -59,7 +59,6 @@ function Search() {
   }
 
   function instructionFire(e) {
-    console.log(e);
     axios.get(`${searchURL}${e}`).then((res) => {
       setIdSearch(res.data.drinks);
       setInstructions(false);
@@ -67,7 +66,6 @@ function Search() {
   }
 
   function closePopup() {
-    console.log(idSearch);
     setInstructions(true);
     setIdSearch("");
   }

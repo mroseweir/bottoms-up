@@ -73,11 +73,13 @@ function Login() {
                   <input
                     className="signInputForm"
                     placeholder="password"
+                    type="password"
                     onChange={(e) => handleChangeLogPass(e.target.value)}
                   ></input>
                   <input
                     className="signInputForm"
                     placeholder="confirm password"
+                    type="password"
                     onChange={(e) => handleChangeLogConfPass(e.target.value)}
                   ></input>
                 </div>

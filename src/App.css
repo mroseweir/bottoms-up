@@ -1,9 +1,9 @@
 .App {
   text-align: center;
-  background-color: rgb(0, 0, 0);
+  background-color: #69b1ec;
 }
 .body {
-  background-color: rgb(0, 0, 0);
+  background-color: #69b1ec;
 }
 /* Handles styling for the Nav Bar */
 /* Handles styling for the Nav Bar */
@@ -435,13 +435,18 @@ nav {
   cursor: pointer;
 }
 .signupBtn {
-  margin-top: 15px;
+  text-decoration: none;
+  color: black;
+  margin-top: 50px;
+  padding-left: 5pt;
+  padding-right: 5pt;
   width: 120px;
   height: 25px;
   background-color: transparent;
   border: 2px solid black;
   border-radius: 5px;
   font-family: "Abel", sans-serif;
+  font-size: 12pt;
   cursor: pointer;
 }
 .signupContainer {
@@ -519,4 +524,21 @@ nav {
   border-radius: 5px;
   font-family: "Abel", sans-serif;
   cursor: pointer;
+}
+
+/* Handles styling for the Register */
+/* Handles styling for the Register */
+/* Handles styling for the Register */
+
+.registerFormContainer {
+  display: flex;
+  margin: auto;
+  background-color: #69b1ec;
+  width: 500px;
+  height: 500px;
+  padding-top: 75px;
+}
+.registerInput {
+  text-align: center;
+  width: 100%;
 }

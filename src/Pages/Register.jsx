@@ -41,11 +41,20 @@ function Register({ setAuth }) {
       <Header />
       <div className="registerFormContainer">
         <form onSubmit={onSubmitForm}>
+          <h1 className="registerHeader">Register</h1>
+          <input
+            className="registerInput"
+            type="text"
+            name="name"
+            placeholder="name*"
+            value={name}
+            onChange={(e) => onChange(e)}
+          />
           <input
             className="registerInput"
             type="email"
             name="email"
-            placeholder="email"
+            placeholder="email*"
             value={email}
             onChange={(e) => onChange(e)}
           />
@@ -53,19 +62,13 @@ function Register({ setAuth }) {
             className="registerInput"
             type="password"
             name="password"
-            placeholder="password"
+            placeholder="password*"
             value={password}
             onChange={(e) => onChange(e)}
           />
-          <input
-            className="registerInput"
-            type="text"
-            name="name"
-            placeholder="name"
-            value={name}
-            onChange={(e) => onChange(e)}
-          />
-          <button>Submit</button>
+          <div>
+            <button className="registerBtn">Submit</button>
+          </div>
         </form>
       </div>
     </div>

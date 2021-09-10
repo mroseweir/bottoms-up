@@ -20,16 +20,20 @@ function Login({ setAuth }) {
       const body = { email, password };
 
       const response = await fetch("http://localhost:5000/auth/login", {
-        method: "post",
+        method: "POST",
         headers: { "Content-type": "application/json" },
         body: JSON.stringify(body),
       });
 
       const parseRes = await response.json();
 
-      localStorage.setItem("token", parseRes.token);
-
-      setAuth(true);
+      if (parseRes.token) {
+        localStorage.setItem("token", parseRes.token);
+        setAuth(true);
+      } else {
+        setAuth(false);
+        setInputs({ password: "" });
+      }
     } catch (err) {
       console.error(err.message);
     }
@@ -65,7 +69,7 @@ function Login({ setAuth }) {
       <div className="signupContainer">
         <p>Don't have an account?</p>
         <Link to="/register" className="signupBtn">
-          Sign Up!
+          sign up
         </Link>
       </div>
     </div>

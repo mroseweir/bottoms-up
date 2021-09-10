@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Header from "../Components/Header";
 
-function Register() {
+function Register({ setAuth }) {
   const [inputs, setInputs] = useState({
     email: "",
     password: "",
@@ -12,7 +12,6 @@ function Register() {
 
   const onChange = (e) => {
     setInputs({ ...inputs, [e.target.name]: e.target.value });
-    console.log(inputs);
   };
 
   const onSubmitForm = async (e) => {
@@ -28,8 +27,10 @@ function Register() {
       });
 
       const parseRes = await response.json();
-      console.log(body);
-      console.log(parseRes);
+
+      localStorage.setItem("token", parseRes.token);
+
+      setAuth(true);
     } catch (err) {
       console.error(err.message);
     }

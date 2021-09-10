@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   BrowserRouter as Router,
   Route,
@@ -11,6 +11,7 @@ import Login from "./Pages/Login";
 import Random from "./Pages/Random";
 import Search from "./Pages/Search";
 import Register from "./Pages/Register";
+import Logout from "./Pages/Logout";
 
 import "./App.css";
 
@@ -20,6 +21,25 @@ function App() {
   const setAuth = (boolean) => {
     setIsAuthenticated(boolean);
   };
+
+  async function isAuth() {
+    try {
+      const response = await fetch("http://localhost:5000/auth/is-verify", {
+        method: "GET",
+        headers: { token: localStorage.token },
+      });
+
+      const parseRes = await response.json();
+
+      parseRes === true ? setIsAuthenticated(true) : setIsAuthenticated(false);
+    } catch (err) {
+      console.error(err.message);
+    }
+  }
+
+  useEffect(() => {
+    isAuth();
+  }, []);
 
   return (
     <div className="App">
@@ -33,7 +53,7 @@ function App() {
               isAuthenticated ? (
                 <Favorites {...props} />
               ) : (
-                <Redirect to="/login" />
+                <Redirect to="/Login" />
               )
             }
           />
@@ -44,7 +64,7 @@ function App() {
               !isAuthenticated ? (
                 <Login {...props} setAuth={setAuth} />
               ) : (
-                <Redirect to="/search" />
+                <Redirect to="/Logout" />
               )
             }
           />
@@ -61,7 +81,18 @@ function App() {
               !isAuthenticated ? (
                 <Register {...props} setAuth={setAuth} />
               ) : (
-                <Redirect to="/search" />
+                <Redirect to="/Login" />
+              )
+            }
+          />
+          <Route
+            exact
+            path="/Logout"
+            render={(props) =>
+              isAuthenticated ? (
+                <Logout {...props} setAuth={setAuth} />
+              ) : (
+                <Redirect to="/Login" />
               )
             }
           />

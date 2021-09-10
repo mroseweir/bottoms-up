@@ -542,3 +542,15 @@ nav {
   text-align: center;
   width: 100%;
 }
+
+/* Handles styling for the Logout Page */
+/* Handles styling for the Logout Page */
+/* Handles styling for the Logout Page */
+
+.logoutContainer {
+  height: 100vh;
+}
+
+.logoutHeader {
+  padding-top: 80px;
+}

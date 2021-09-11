@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Header from "../Components/Header";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function Login({ setAuth }) {
   const [inputs, setInputs] = useState({
@@ -30,9 +32,11 @@ function Login({ setAuth }) {
       if (parseRes.token) {
         localStorage.setItem("token", parseRes.token);
         setAuth(true);
+        toast.success("Welcome!");
       } else {
         setAuth(false);
         setInputs({ password: "" });
+        toast.error("Email or Password is incorrect");
       }
     } catch (err) {
       console.error(err.message);

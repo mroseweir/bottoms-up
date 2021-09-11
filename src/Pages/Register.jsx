@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Header from "../Components/Header";
+import { toast } from "react-toastify";
 
 function Register({ setAuth }) {
   const [inputs, setInputs] = useState({
@@ -28,9 +29,15 @@ function Register({ setAuth }) {
 
       const parseRes = await response.json();
 
-      localStorage.setItem("token", parseRes.token);
+      if (parseRes.token) {
+        localStorage.setItem("token", parseRes.token);
 
-      setAuth(true);
+        setAuth(true);
+        toast.success("User Registered Successfully!");
+      } else {
+        setAuth(false);
+        toast.error(parseRes);
+      }
     } catch (err) {
       console.error(err.message);
     }

@@ -1,4 +1,5 @@
 import React from "react";
+import { toast } from "react-toastify";
 import Header from "../Components/Header";
 
 function Logout({ setAuth }) {
@@ -6,6 +7,7 @@ function Logout({ setAuth }) {
     e.preventDefault();
     localStorage.removeItem("token");
     setAuth(false);
+    toast.success("User has been logged out.");
   }
 
   return (

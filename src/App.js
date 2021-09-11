@@ -12,8 +12,11 @@ import Random from "./Pages/Random";
 import Search from "./Pages/Search";
 import Register from "./Pages/Register";
 import Logout from "./Pages/Logout";
-
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import "./App.css";
+
+toast.configure();
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);

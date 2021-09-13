@@ -15,9 +15,15 @@ function Logout({ setAuth }) {
       <Header />
       <div className="logoutContainer">
         <h1 className="logoutHeader">
-          You are succesfully logged in! <br></br> Click below to logout.
+          You are succesfully logged in! <br></br>
+          Head on over to the random page to find a new drink! <br></br>
+          If you would like to search by a specific ingredient, Head over to the
+          search page! <br></br>
+          When you are all done, come back here and click below to logout.
         </h1>
-        <button onClick={(e) => logoutFire(e)}>Logout</button>
+        <button className="logoutBtn" onClick={(e) => logoutFire(e)}>
+          Logout
+        </button>
       </div>
     </div>
   );

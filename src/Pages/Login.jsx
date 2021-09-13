@@ -32,7 +32,7 @@ function Login({ setAuth }) {
       if (parseRes.token) {
         localStorage.setItem("token", parseRes.token);
         setAuth(true);
-        toast.success("Welcome!");
+        toast.success("User successfully logged in!");
       } else {
         setAuth(false);
         setInputs({ password: "" });

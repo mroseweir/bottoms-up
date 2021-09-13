@@ -20,10 +20,8 @@ function Search() {
 
   function submit(input) {
     if (input === "") {
-      console.log("fail");
       alert("Must input an ingredient to search!");
     } else {
-      console.log(input);
       axios.get(`${baseURL}${input}`).then((res) => {
         if (res.data.drinks === undefined) {
           alert("No drinks found :(");

@@ -1,57 +1,47 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import Header from "../Components/Header";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
-function Login() {
-  const [logUsername, setLogUsername] = useState("");
-  const [logPassword, setLogPassword] = useState("");
+function Login({ setAuth }) {
+  const [inputs, setInputs] = useState({
+    email: "",
+    password: "",
+  });
 
-  const [signUsername, setSignUsername] = useState("");
-  const [signPassword, setSignPassword] = useState("");
-  const [signConfPassword, setSignConfPassword] = useState("");
+  const { email, password } = inputs;
 
-  const [signUp, setSignUp] = useState(true);
-  const [signUpConfirm, setSignUpConfirm] = useState(true);
+  const onChange = (e) => {
+    setInputs({ ...inputs, [e.target.name]: e.target.value });
+  };
 
-  function handleChangeUser(a) {
-    setLogUsername(a);
-  }
+  const onSubmitForm = async (e) => {
+    e.preventDefault();
+    try {
+      const body = { email, password };
 
-  function handleChangePass(b) {
-    setLogPassword(b);
-  }
+      const response = await fetch("http://localhost:5000/auth/login", {
+        method: "POST",
+        headers: { "Content-type": "application/json" },
+        body: JSON.stringify(body),
+      });
 
-  function handleChangeLogUser(c) {
-    setSignUsername(c);
-  }
+      const parseRes = await response.json();
 
-  function handleChangeLogPass(d) {
-    setSignPassword(d);
-  }
-
-  function handleChangeLogConfPass(e) {
-    setSignConfPassword(e);
-  }
-
-  function login() {
-    console.log(logUsername);
-    console.log(logPassword);
-  }
-
-  function signUpBtn() {
-    setSignUp(false);
-  }
-
-  function returnLogin() {
-    setSignUpConfirm(true);
-  }
-
-  function createAccount() {
-    console.log(signUsername);
-    console.log(signPassword);
-    console.log(signConfPassword);
-    setSignUp(true);
-    setSignUpConfirm(false);
-  }
+      if (parseRes.token) {
+        localStorage.setItem("token", parseRes.token);
+        setAuth(true);
+        toast.success("Welcome!");
+      } else {
+        setAuth(false);
+        setInputs({ password: "" });
+        toast.error("Email or Password is incorrect");
+      }
+    } catch (err) {
+      console.error(err.message);
+    }
+  };
 
   return (
     <div className="loginContainer">
@@ -59,71 +49,32 @@ function Login() {
       <div className="formContainer">
         <div className="inputContainer">
           <h1 className="loginHeader">Login</h1>
-
-          <div>
-            {signUp ? null : (
-              <div className="signupWindow">
-                <h1 className="createAccountHeader">Create Account</h1>
-                <div className="signUpContainer2">
-                  <input
-                    className="signInputForm"
-                    placeholder="username"
-                    onChange={(e) => handleChangeLogUser(e.target.value)}
-                  ></input>
-                  <input
-                    className="signInputForm"
-                    placeholder="password"
-                    type="password"
-                    onChange={(e) => handleChangeLogPass(e.target.value)}
-                  ></input>
-                  <input
-                    className="signInputForm"
-                    placeholder="confirm password"
-                    type="password"
-                    onChange={(e) => handleChangeLogConfPass(e.target.value)}
-                  ></input>
-                </div>
-                <button className="signUpBtn" onClick={() => createAccount()}>
-                  Create Account
-                </button>
-              </div>
-            )}
-          </div>
-          <div>
-            {signUpConfirm ? null : (
-              <div className="signUpConfirmation">
-                <h1 className="confirmationHeader">
-                  Account Created Successfully!
-                </h1>
-                <button className="returnBtn" onClick={() => returnLogin()}>
-                  Return to Login
-                </button>
-              </div>
-            )}
-          </div>
-          <input
-            className="inputForm"
-            placeholder="username"
-            onChange={(e) => handleChangeUser(e.target.value)}
-          ></input>
-          <input
-            className="inputForm"
-            type="password"
-            placeholder="password"
-            onChange={(e) => handleChangePass(e.target.value)}
-          ></input>
-        </div>
-        <div className="btnContainer">
-          <button className="signinBtn" onClick={() => login()}>
-            Login
-          </button>
+          <form onSubmit={onSubmitForm}>
+            <input
+              className="inputForm"
+              type="email"
+              name="email"
+              placeholder="email"
+              value={email}
+              onChange={(e) => onChange(e)}
+            ></input>
+            <input
+              className="inputForm"
+              type="password"
+              name="password"
+              placeholder="password"
+              value={password}
+              onChange={(e) => onChange(e)}
+            ></input>
+            <button className="signinBtn">Login</button>
+          </form>
         </div>
       </div>
       <div className="signupContainer">
-        Don't have an account?<br></br>
-        <button className="signupBtn" onClick={() => signUpBtn()}>
-          Sign Up
-        </button>
+        <p>Don't have an account?</p>
+        <Link to="/register" className="signupBtn">
+          sign up
+        </Link>
       </div>
     </div>
   );

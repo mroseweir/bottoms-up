@@ -1,9 +1,9 @@
 .App {
   text-align: center;
-  background-color: rgb(0, 0, 0);
+  background-color: #69b1ec;
 }
 .body {
-  background-color: rgb(0, 0, 0);
+  background-color: #69b1ec;
 }
 /* Handles styling for the Nav Bar */
 /* Handles styling for the Nav Bar */
@@ -421,28 +421,22 @@ nav {
   text-align: center;
   font-family: "Abel", sans-serif;
 }
-.btnContainer {
-  width: 100%;
-}
 .signinBtn {
   margin-top: 15px;
   width: 120px;
   height: 25px;
-  background-color: transparent;
   border: 2px solid black;
   border-radius: 5px;
   font-family: "Abel", sans-serif;
   cursor: pointer;
+  background: linear-gradient(45deg, #ffae00 40%, transparent 50%);
+  background-size: 300% 100%;
+  background-position: right bottom;
+  transition: ease-out 0.3s;
 }
-.signupBtn {
-  margin-top: 15px;
-  width: 120px;
-  height: 25px;
-  background-color: transparent;
-  border: 2px solid black;
-  border-radius: 5px;
-  font-family: "Abel", sans-serif;
-  cursor: pointer;
+.signinBtn:hover {
+  background-position: left bottom;
+  transition: ease-in 0.2s;
 }
 .signupContainer {
   padding-top: 30px;
@@ -450,48 +444,30 @@ nav {
   font-size: 18px;
   display: block;
 }
-.signupWindow {
-  position: fixed;
-  height: 350px;
-  width: 450px;
-  padding-left: 50px;
-  padding-right: 50px;
-  background-color: #69b1ec;
-  border: 2px solid black;
-  border-radius: 5px;
-  box-shadow: 0 0 40px 20px rgba(0, 0, 0, 0.418);
-  left: 50%;
-  transform: translate(-50%, 0);
-  top: 30%;
-}
-.createAccountHeader {
-  font-family: "Abel", sans-serif;
-}
-.signUpContainer2 {
-  padding-top: 25px;
-  display: block;
-}
-.signInputForm {
-  width: 260px;
-  height: 30px;
-  font-size: 12pt;
-  margin-bottom: 15px;
-  background-color: transparent;
-  border: 2px solid black;
-  border-radius: 5px;
-  text-align: center;
-  font-family: "Abel", sans-serif;
-}
-.signUpBtn {
+
+.signupBtn {
   margin-top: 15px;
   width: 120px;
   height: 25px;
-  background-color: transparent;
   border: 2px solid black;
   border-radius: 5px;
   font-family: "Abel", sans-serif;
+  font-size: 12pt;
+  text-decoration: none;
+  color: black;
+  padding-left: 5px;
+  padding-right: 5px;
   cursor: pointer;
+  background: linear-gradient(45deg, #ffae00 40%, transparent 50%);
+  background-size: 300% 100%;
+  background-position: right bottom;
+  transition: ease-out 0.3s;
 }
+.signupBtn:hover {
+  background-position: left bottom;
+  transition: ease-in 0.2s;
+}
+
 .signUpConfirmation {
   position: fixed;
   height: 350px;
@@ -519,4 +495,66 @@ nav {
   border-radius: 5px;
   font-family: "Abel", sans-serif;
   cursor: pointer;
+}
+
+/* Handles styling for the Register */
+/* Handles styling for the Register */
+/* Handles styling for the Register */
+
+.registerPage {
+  height: 100vh;
+}
+.registerHeader {
+  font-family: "Abel", sans-serif;
+  font-size: 24pt;
+}
+
+.registerFormContainer {
+  display: flex;
+  margin: auto;
+  background-color: #69b1ec;
+  width: 500px;
+  height: 500px;
+  padding-top: 250px;
+}
+.registerInput {
+  margin-top: 15px;
+  width: 250px;
+  height: 30px;
+  font-size: 12pt;
+  background-color: transparent;
+  border: 2px solid black;
+  border-radius: 5px;
+  text-align: center;
+  font-family: "Abel", sans-serif;
+}
+.registerBtn {
+  margin-top: 15px;
+  width: 120px;
+  height: 25px;
+  border: 2px solid black;
+  border-radius: 5px;
+  font-family: "Abel", sans-serif;
+  cursor: pointer;
+  background: linear-gradient(45deg, #ffae00 40%, transparent 50%);
+  background-size: 300% 100%;
+  background-position: right bottom;
+  transition: ease-out 0.3s;
+}
+.registerBtn:hover {
+  cursor: pointer;
+  background-position: left bottom;
+  transition: ease-in 0.2s;
+}
+
+/* Handles styling for the Logout Page */
+/* Handles styling for the Logout Page */
+/* Handles styling for the Logout Page */
+
+.logoutContainer {
+  height: 100vh;
+}
+
+.logoutHeader {
+  padding-top: 80px;
 }

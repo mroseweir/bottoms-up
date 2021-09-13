@@ -556,5 +556,25 @@ nav {
 }
 
 .logoutHeader {
-  padding-top: 80px;
+  padding-top: 180px;
+  font-family: "Abel", sans-serif;
+  line-height: 100px;
+}
+.logoutBtn {
+  margin-top: 15px;
+  width: 120px;
+  height: 40px;
+  border: 2px solid black;
+  border-radius: 5px;
+  font-family: "Abel", sans-serif;
+  font-size: 18pt;
+  cursor: pointer;
+  background: linear-gradient(45deg, #ffae00 40%, transparent 50%);
+  background-size: 300% 120%;
+  background-position: right bottom;
+  transition: ease-out 0.3s;
+}
+.logoutBtn:hover {
+  background-position: left bottom;
+  transition: ease-in 0.2s;
 }

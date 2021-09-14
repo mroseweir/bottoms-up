@@ -68,8 +68,10 @@ function Search() {
     setIdSearch("");
   }
 
-  function addFavorite() {
-    alert("Added to favorites!");
+  function addFavorite(e) {
+    let userId = localStorage.getItem("userId");
+    console.log(e);
+    alert(userId);
   }
 
   return (
@@ -96,7 +98,7 @@ function Search() {
       <div>
         {instructions ? null : (
           <div className="instructionContainer">
-            <div className="instructionsPopup">
+            <div key={idSearch[0].id} className="instructionsPopup">
               <h1 className="searchDrinkName">{idSearch[0].strDrink}</h1>
 
               <ul className="searchIngredientsList">
@@ -143,8 +145,9 @@ function Search() {
               <div>
                 <button
                   className="searchFaveBtn"
+                  data-drinkid={idSearch[0].idDrink}
                   onClick={(e) => {
-                    addFavorite();
+                    addFavorite(e.target.dataset.drinkid);
                   }}
                 >
                   Add To Favorites

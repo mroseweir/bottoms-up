@@ -57,8 +57,10 @@ router.post("/login", validInfo, async (req, res) => {
       return res.status(401).json("Password or Email is incorrect.");
     }
 
+    const userId = user.rows[0].user_id;
+
     const token = jwtGenerator(user.rows[0].user_id);
-    res.json({ token });
+    res.json({ token, userId });
   } catch (err) {
     console.error(err.message);
     res.status(500).send("Server Error");

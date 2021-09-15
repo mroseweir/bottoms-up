@@ -21,6 +21,8 @@ function Register({ setAuth }) {
     try {
       const body = { email, password, name };
 
+      console.log(body);
+
       const response = await fetch("http://localhost:5000/auth/register", {
         method: "POST",
         headers: { "Content-type": "application/json" },
@@ -31,6 +33,7 @@ function Register({ setAuth }) {
 
       if (parseRes.token) {
         localStorage.setItem("token", parseRes.token);
+        localStorage.setItem("userId", parseRes.userId);
 
         setAuth(true);
         toast.success("User Registered Successfully!");

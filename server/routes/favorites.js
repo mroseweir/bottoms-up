@@ -20,15 +20,15 @@ router.post("/addfavorite", async (req, res) => {
   }
 });
 
-router.get("/getfavorites", async (req, res) => {
+router.get("/getfavorites/:id", async (req, res) => {
   try {
-    const userId = req.body.userId;
+    const { id } = req.params;
 
-    console.log(userId);
+    console.log(id);
 
     const favorites = await pool.query(
       "SELECT drinkid FROM favorites WHERE userid = $1",
-      [userId]
+      [id]
     );
 
     res.json(favorites.rows);

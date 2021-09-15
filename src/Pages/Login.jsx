@@ -31,6 +31,7 @@ function Login({ setAuth }) {
 
       if (parseRes.token) {
         localStorage.setItem("token", parseRes.token);
+        localStorage.setItem("userId", parseRes.userId);
         setAuth(true);
         toast.success("User successfully logged in!");
       } else {

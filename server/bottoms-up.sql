@@ -9,7 +9,7 @@ CREATE TABLE users(
 
 CREATE TABLE favorites(
     userid INT NOT NULL,
-    drinkid INT NOT NULL UNIQUE
+    drinkid INT NOT NULL
 );
 
 CREATE TABLE ratings(

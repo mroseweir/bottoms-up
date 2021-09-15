@@ -6,6 +6,7 @@ function Logout({ setAuth }) {
   function logoutFire(e) {
     e.preventDefault();
     localStorage.removeItem("token");
+    localStorage.removeItem("userId");
     setAuth(false);
     toast.success("User has been logged out.");
   }

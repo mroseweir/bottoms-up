@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Header from "../Components/Header";
 import axios from "axios";
 import gif3 from "../assets/gif3.gif";
+import { toast } from "react-toastify";
 
 function Search() {
   const [results, setResults] = useState(null);
@@ -68,9 +69,36 @@ function Search() {
     setIdSearch("");
   }
 
-  function addFavorite() {
-    alert("Added to favorites!");
-  }
+  const addFavorite = async (e) => {
+    let userId = localStorage.getItem("userId");
+    let drinkId = e;
+
+    try {
+      const body = { userId, drinkId };
+
+      const response = await fetch(
+        "http://localhost:5000/favorite/addfavorite",
+        {
+          method: "POST",
+          headers: { "Content-type": "application/json" },
+          body: JSON.stringify(body),
+        }
+      );
+
+      console.log(body);
+      const parseRes = await response.json();
+      console.log(parseRes);
+
+      if (parseRes) {
+        console.log("success");
+        toast.success("Successfully Added drink to favorites!");
+      } else {
+        toast.error("Already in favorites!");
+      }
+    } catch (err) {
+      console.error(err.message);
+    }
+  };
 
   return (
     <div className="searchContainer">
@@ -96,7 +124,7 @@ function Search() {
       <div>
         {instructions ? null : (
           <div className="instructionContainer">
-            <div className="instructionsPopup">
+            <div key={idSearch[0].id} className="instructionsPopup">
               <h1 className="searchDrinkName">{idSearch[0].strDrink}</h1>
 
               <ul className="searchIngredientsList">
@@ -143,8 +171,9 @@ function Search() {
               <div>
                 <button
                   className="searchFaveBtn"
+                  data-drinkid={idSearch[0].idDrink}
                   onClick={(e) => {
-                    addFavorite();
+                    addFavorite(e.target.dataset.drinkid);
                   }}
                 >
                   Add To Favorites

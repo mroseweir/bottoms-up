@@ -31,13 +31,14 @@ function Favorites() {
       })
       .then(() => {
         setFavorites(drinkArr);
+        console.log(drinkArr);
+        console.log(loading);
       })
       .finally(() => {
-        // setFavorites(drinkArr);
-        // console.log(drinkArr);
+        console.log(drinkArr);
         setLoading(false);
-        console.log(favorites);
       });
+    console.log(loading);
   }, []);
 
   if (loading) return <p>Loading</p>;

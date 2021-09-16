@@ -5,6 +5,9 @@
 .body {
   background-color: #69b1ec;
 }
+html {
+  background-color: #69b1ec;
+}
 /* Handles styling for the Nav Bar */
 /* Handles styling for the Nav Bar */
 /* Handles styling for the Nav Bar */
@@ -52,7 +55,6 @@ nav {
 
 .homeContainer {
   background-color: #69b1ec;
-  height: 96vh;
 }
 .mainHeader {
   padding-top: 85px;
@@ -277,7 +279,87 @@ nav {
 .favoritesContainer {
   padding-top: 5vh;
   background-color: #69b1ec;
-  height: 100vh;
+}
+
+.loadingHeader {
+  margin: auto;
+  width: 200px;
+  margin-top: 180px;
+  margin-bottom: 20px;
+  font-family: "Abel", sans-serif;
+  font-size: 32pt;
+  border: 2px solid black;
+  border-radius: 5px;
+}
+.loading {
+  padding-bottom: 370px;
+}
+.favoritesHeader {
+  width: 400px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  margin: auto;
+  margin-top: 75px;
+  font-family: "Abel", sans-serif;
+  border: 2px solid black;
+  border-radius: 5px;
+}
+.indFaveContainer {
+  margin: auto;
+  margin-top: 25px;
+  padding-bottom: 25px;
+  width: 45vw;
+  border: 2px solid black;
+  border-radius: 5px;
+}
+.indFaveHeaderContainer {
+  width: 40vw;
+}
+.indFaveHeader {
+  font-family: "Abel", sans-serif;
+  font-size: 18pt;
+  text-decoration: underline;
+  width: 45vw;
+}
+.indFaveInfo {
+  display: flex;
+  justify-content: space-evenly;
+}
+.faveImg {
+  height: 300px;
+  width: 300px;
+  padding-bottom: 25px;
+  border-radius: 5px;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+.faveIngredientsList {
+  text-align: center;
+  list-style: none;
+  padding-right: 13%;
+}
+.indFaveInstructions {
+  font-family: "Abel", sans-serif;
+  width: 250px;
+}
+
+.faveDeleteBtn {
+  border: 2px solid black;
+  border-radius: 5px;
+  font-family: "Abel", sans-serif;
+  font-size: 16pt;
+  margin-bottom: 10px;
+  background: linear-gradient(45deg, #ffae00 50%, transparent 50%);
+  background-size: 300% 100%;
+  background-position: right bottom;
+  transition: ease-out 0.2s;
+}
+.faveDeleteBtn:hover {
+  background-color: #ffae00;
+  color: black;
+  cursor: pointer;
+  background-position: left bottom;
+  transition: ease-in 0.2s;
 }
 
 /* Handles styling for the Random Page */
@@ -287,7 +369,6 @@ nav {
 .randomContainer {
   padding-top: 5vh;
   background-color: #69b1ec;
-  height: 100vh;
 }
 .randomHeader {
   padding-top: 7vh;

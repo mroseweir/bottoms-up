@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Header from "../Components/Header";
 import axios from "axios";
+import { toast } from "react-toastify";
 
 function Random() {
   const baseURL = "https://www.thecocktaildb.com/api/json/v1/1";
@@ -26,9 +27,36 @@ function Random() {
       });
   }
 
-  function addFavorite() {
-    alert("Added to favorites!");
-  }
+  const addFavorite = async (e) => {
+    let userId = localStorage.getItem("userId");
+    let drinkId = e;
+
+    try {
+      const body = { userId, drinkId };
+
+      const response = await fetch(
+        "http://localhost:5000/favorite/addfavorite",
+        {
+          method: "POST",
+          headers: { "Content-type": "application/json" },
+          body: JSON.stringify(body),
+        }
+      );
+
+      console.log(body);
+      const parseRes = await response.json();
+      console.log(parseRes);
+
+      if (parseRes) {
+        console.log("success");
+        toast.success("Successfully Added drink to favorites!");
+      } else {
+        toast.error("Already in favorites!");
+      }
+    } catch (err) {
+      console.error(err.message);
+    }
+  };
 
   return (
     <div className="randomContainer">
@@ -100,8 +128,9 @@ function Random() {
                 <div>
                   <button
                     className="randFaveBtn"
+                    data-drinkid={drink[0].idDrink}
                     onClick={(e) => {
-                      addFavorite();
+                      addFavorite(e.target.dataset.drinkid);
                     }}
                   >
                     Add To Favorites

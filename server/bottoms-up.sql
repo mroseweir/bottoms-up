@@ -26,5 +26,8 @@ ALTER TABLE "ratings" ADD CONSTRAINT "ratings_fk1" FOREIGN KEY ("drinkid") REFER
 
 INSERT INTO users (name, username, password) VALUES ('Michael', 'mroseweir', 'test');
 
+
+DELETE FROM favorites WHERE userid = 30 AND drinkid = 12766 RETURNING *;
+
 ALTER TABLE users 
 RENAME COLUMN id TO user_id;

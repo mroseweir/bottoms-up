@@ -27,11 +27,33 @@ router.get("/getfavorites/:id", async (req, res) => {
     console.log(id);
 
     const favorites = await pool.query(
-      "SELECT drinkid FROM favorites WHERE userid = $1",
+      "SELECT DISTINCT drinkid FROM favorites WHERE userid = $1",
       [id]
     );
 
     res.json(favorites.rows);
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).json("Server Error");
+  }
+});
+
+router.delete("/deletefavorite/:id/:drinkId", async (req, res) => {
+  try {
+    const { id, drinkId } = req.params;
+    console.log(id, drinkId);
+
+    const deleteFave = await pool.query(
+      "DELETE FROM favorites WHERE userid = $1 AND drinkid = $2 RETURNING *",
+      [id, drinkId]
+    );
+
+    const sendNewFaves = await pool.query(
+      "SELECT DISTINCT drinkid FROM favorites WHERE userid = $1",
+      [id]
+    );
+
+    res.json(sendNewFaves.rows);
   } catch (err) {
     console.error(err.message);
     res.status(500).json("Server Error");

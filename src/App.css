@@ -7,6 +7,7 @@
 }
 html {
   background-color: #69b1ec;
+  margin-bottom: 25px;
 }
 /* Handles styling for the Nav Bar */
 /* Handles styling for the Nav Bar */
@@ -78,7 +79,6 @@ nav {
 
 .searchContainer {
   background-color: #69b1ec;
-  height: 100vh;
 }
 .searchHeader {
   padding-top: 85px;
@@ -292,7 +292,7 @@ nav {
   border-radius: 5px;
 }
 .loading {
-  padding-bottom: 370px;
+  padding-top: 50px;
 }
 .favoritesHeader {
   width: 400px;
@@ -301,6 +301,7 @@ nav {
   margin: auto;
   margin-top: 75px;
   font-family: "Abel", sans-serif;
+  font-size: 18pt;
   border: 2px solid black;
   border-radius: 5px;
 }
@@ -342,13 +343,13 @@ nav {
   font-family: "Abel", sans-serif;
   width: 250px;
 }
-
 .faveDeleteBtn {
   border: 2px solid black;
   border-radius: 5px;
   font-family: "Abel", sans-serif;
   font-size: 16pt;
   margin-bottom: 10px;
+  margin-right: 10px;
   background: linear-gradient(45deg, #ffae00 50%, transparent 50%);
   background-size: 300% 100%;
   background-position: right bottom;
@@ -360,6 +361,83 @@ nav {
   cursor: pointer;
   background-position: left bottom;
   transition: ease-in 0.2s;
+}
+.commentContainer {
+  position: fixed;
+  margin-top: 25vh;
+  width: 50vw;
+  height: 450px;
+  background-color: #5087b4;
+  border: 2px solid black;
+  border-radius: 5px;
+  box-shadow: 0 0 40px 20px rgba(0, 0, 0, 0.418);
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+.commentInput {
+  width: 90%;
+  height: 75px;
+  background-color: #69b1ec;
+  border: 2px solid black;
+  border-radius: 5px;
+}
+.addCommentBtn {
+  border: 2px solid black;
+  border-radius: 5px;
+  font-family: "Abel", sans-serif;
+  font-size: 12pt;
+  margin-top: 10px;
+  background: linear-gradient(45deg, #ffae00 50%, transparent 50%);
+  background-size: 300% 100%;
+  background-position: right bottom;
+  transition: ease-out 0.2s;
+}
+.addCommentBtn:hover {
+  background-color: #ffae00;
+  color: black;
+  cursor: pointer;
+  background-position: left bottom;
+  transition: ease-in 0.2s;
+}
+.currentComments {
+  background-color: #69b1ec;
+  height: 200px;
+  width: 90%;
+  margin: auto;
+  margin-top: 10px;
+  overflow-y: auto;
+  border: 2px solid black;
+  border-radius: 5px;
+}
+.currentCommentLoading {
+  background-color: #69b1ec;
+  height: 200px;
+  width: 90%;
+  margin: auto;
+  margin-top: 10px;
+  border: 2px solid black;
+  border-radius: 5px;
+}
+.closeCommentBtn {
+  border: 2px solid black;
+  border-radius: 5px;
+  font-family: "Abel", sans-serif;
+  font-size: 12pt;
+  margin-top: 10px;
+  background: linear-gradient(45deg, #ffae00 50%, transparent 50%);
+  background-size: 300% 100%;
+  background-position: right bottom;
+  transition: ease-out 0.2s;
+}
+.closeCommentBtn:hover {
+  background-color: #ffae00;
+  color: black;
+  cursor: pointer;
+  background-position: left bottom;
+  transition: ease-in 0.2s;
+}
+.loading2 {
+  height: 200px;
 }
 
 /* Handles styling for the Random Page */

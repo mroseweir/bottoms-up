@@ -15,6 +15,8 @@ app.use("/dashboard", require("./routes/dashboard"));
 
 app.use("/favorite", require("./routes/favorites"));
 
+app.use("/comments", require("./routes/comments"));
+
 app.listen(5000, () => {
   console.log(`Server is starting on port 5000`);
 });

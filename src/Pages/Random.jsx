@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Header from "../Components/Header";
 import axios from "axios";
 import { toast } from "react-toastify";
+import loadinggif from "../assets/loadinggif.gif";
 
 function Random() {
   const baseURL = "https://www.thecocktaildb.com/api/json/v1/1";
@@ -73,7 +74,10 @@ function Random() {
         </button>
         <div>
           {loading ? (
-            <p>"loading"</p>
+            <div>
+              <p className="loadingHeader">Hang Tight!</p>
+              <img src={loadinggif} alt="" className="loading" />
+            </div>
           ) : (
             <div className="randDrinkContainer">
               <div className="randDrinkPhoto">

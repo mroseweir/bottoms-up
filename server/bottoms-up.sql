@@ -12,12 +12,17 @@ CREATE TABLE favorites(
     drinkid INT NOT NULL
 );
 
-CREATE TABLE ratings(
+CREATE TABLE comments(
     userid INT NOT NULL,
     drinkid INT NOT NULL,
-    rating INT,
     comment VARCHAR(5000)
 );
+
+INSERT INTO comments (userid, drinkid, comment) VALUES (31, 11054, 'This is test');
+INSERT INTO comments (userid, drinkid, comment) VALUES (31, 13899, 'This is test');
+INSERT INTO comments (userid, drinkid, comment) VALUES (31, 13899, 'This is also a test');
+INSERT INTO comments (userid, drinkid, comment) VALUES (31, 13086, 'This is test');
+SELECT comment FROM comments WHERE userid = 31 AND drinkid = 11054;
 
 ALTER TABLE "favorites" ADD CONSTRAINT "favorites_fk0" FOREIGN KEY ("userid") REFERENCES "users"("id");
 

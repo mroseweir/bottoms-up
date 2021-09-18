@@ -45,7 +45,7 @@ function Header() {
                 activeClassName="active-link"
                 to="/Login"
               >
-                Login/Logout
+                Account
               </NavLink>
             </li>
           </ul>

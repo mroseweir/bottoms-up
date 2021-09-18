@@ -11,6 +11,8 @@ function Favorites() {
   const [loading2, setLoading2] = useState(true);
   const [comment, setComment] = useState(true);
   const [commentBody, setCommentBody] = useState(true);
+  const [drinkId2, setDrinkId2] = useState(null);
+  const [commentSend, setCommentSend] = useState(null);
 
   let drinkArr = [];
 
@@ -43,7 +45,6 @@ function Favorites() {
   }, []);
 
   function deleteIt(drinkId) {
-    // console.log(drinkName);
     setLoading(true);
     const userId = localStorage.getItem("userId");
 
@@ -82,6 +83,7 @@ function Favorites() {
     setComment(false);
     setCommentBody(null);
     setLoading2(true);
+    setDrinkId2(drinkid);
     commentArr = [];
     const userId = localStorage.getItem("userId");
 
@@ -103,6 +105,32 @@ function Favorites() {
     console.log(userId);
   }
 
+  const onChange = (e) => {
+    setCommentSend(e.target.value);
+  };
+
+  const addComment = async () => {
+    let userid = parseInt(localStorage.getItem("userId"));
+    let drinkid = parseInt(drinkId2);
+    let comment = commentSend;
+
+    const body = { userid, drinkid, comment };
+    console.log(body);
+
+    const response = await fetch("http://localhost:5000/comments/addcomment", {
+      method: "POST",
+      headers: { "Content-type": "application/json" },
+      body: JSON.stringify(body),
+    });
+
+    const parseRes = await response.json();
+
+    setCommentSend("");
+    setCommentBody([...commentBody, parseRes]);
+
+    console.log(commentBody);
+  };
+
   function closeComment() {
     setComment(true);
   }
@@ -114,9 +142,16 @@ function Favorites() {
         {comment ? null : (
           <div className="commentContainer">
             <p>What do you think?</p>
-            <textarea type="text" className="commentInput"></textarea>
+            <textarea
+              type="text"
+              className="commentInput"
+              onChange={(e) => onChange(e)}
+              value={commentSend}
+            ></textarea>
             <div>
-              <button className="addCommentBtn">Add Comment</button>
+              <button className="addCommentBtn" onClick={() => addComment()}>
+                Add Comment
+              </button>
             </div>
             {loading2 ? (
               <div className="currentCommentLoading">
@@ -124,17 +159,18 @@ function Favorites() {
               </div>
             ) : (
               <div className="currentComments">
-                <p>{commentBody[0]}</p>
-                <p>{commentBody[1]}</p>
-                <p>{commentBody[2]}</p>
-                <p>{commentBody[3]}</p>
-                <p>{commentBody[4]}</p>
-                <p>{commentBody[5]}</p>
-                <p>{commentBody[6]}</p>
-                <p>{commentBody[7]}</p>
-                <p>{commentBody[8]}</p>
-                <p>{commentBody[9]}</p>
-                <p>{commentBody[10]}</p>
+                <div className="indCommentContainer">
+                  <p className="indComment">{commentBody[0]}</p>
+                  <p className="indComment">{commentBody[1]}</p>
+                  <p className="indComment">{commentBody[2]}</p>
+                  <p className="indComment">{commentBody[3]}</p>
+                  <p className="indComment">{commentBody[4]}</p>
+                  <p className="indComment">{commentBody[5]}</p>
+                  <p className="indComment">{commentBody[6]}</p>
+                  <p className="indComment">{commentBody[7]}</p>
+                  <p className="indComment">{commentBody[8]}</p>
+                  <p className="indComment">{commentBody[9]}</p>
+                </div>
               </div>
             )}
             <div>

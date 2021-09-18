@@ -18,11 +18,11 @@ router.get("/getcomments/:id/:drinkId", async (req, res) => {
 
 router.post("/addcomment", async (req, res) => {
   try {
-    const { userId, drinkId, comment } = req.body;
+    const { userid, drinkid, comment } = req.body;
 
     const newComment = await pool.query(
       "INSERT INTO comments (userid, drinkid, comment) VALUES ($1, $2, $3) RETURNING *",
-      [userId, drinkId, comment]
+      [userid, drinkid, comment]
     );
 
     const sendComment = newComment.rows[0].comment;

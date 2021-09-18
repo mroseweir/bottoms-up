@@ -28,12 +28,15 @@ function Login({ setAuth }) {
       });
 
       const parseRes = await response.json();
+      console.log(parseRes);
 
       if (parseRes.token) {
         localStorage.setItem("token", parseRes.token);
         localStorage.setItem("userId", parseRes.userId);
+        localStorage.setItem("name", parseRes.name);
+        localStorage.setItem("email", parseRes.email);
         setAuth(true);
-        toast.success("User successfully logged in!");
+        toast.success(`${parseRes.name} successfully logged in!`);
       } else {
         setAuth(false);
         setInputs({ password: "" });

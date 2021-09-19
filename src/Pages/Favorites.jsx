@@ -100,9 +100,6 @@ function Favorites() {
           setLoading2(false);
         }, 1000);
       });
-
-    console.log(drinkid);
-    console.log(userId);
   }
 
   const onChange = (e) => {
@@ -115,7 +112,6 @@ function Favorites() {
     let comment = commentSend;
 
     const body = { userid, drinkid, comment };
-    console.log(body);
 
     const response = await fetch("http://localhost:5000/comments/addcomment", {
       method: "POST",
@@ -127,9 +123,18 @@ function Favorites() {
 
     setCommentSend("");
     setCommentBody([...commentBody, parseRes]);
-
-    console.log(commentBody);
   };
+
+  function deleteComments() {
+    let userid = parseInt(localStorage.getItem("userId"));
+    let drinkid = parseInt(drinkId2);
+
+    axios
+      .delete(
+        `http://localhost:5000/comments/deletecomments/${userid}/${drinkid}`
+      )
+      .then(setCommentBody(""));
+  }
 
   function closeComment() {
     setComment(true);
@@ -151,6 +156,12 @@ function Favorites() {
             <div>
               <button className="addCommentBtn" onClick={() => addComment()}>
                 Add Comment
+              </button>
+              <button
+                className="deleteCommentBtn"
+                onClick={() => deleteComments()}
+              >
+                Clear Comments
               </button>
             </div>
             {loading2 ? (

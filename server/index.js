@@ -2,12 +2,12 @@ const express = require("express");
 const app = express();
 const cors = require("cors");
 
-//middleware
+//middleware//
 
 app.use(cors());
 app.use(express.json());
 
-//routes
+//routes//
 
 app.use("/auth", require("./routes/jwtAuth"));
 

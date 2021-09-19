@@ -33,4 +33,21 @@ router.post("/addcomment", async (req, res) => {
   }
 });
 
+router.delete("/deletecomments/:id/:drinkid", async (req, res) => {
+  try {
+    const { id, drinkid } = req.params;
+
+    const deleteComments = await pool.query(
+      "DELETE FROM comments WHERE userid = $1 AND drinkid = $2",
+      [id, drinkid]
+    );
+
+    console.log(id, drinkid);
+
+    res.status(200).json("deleted all comments for this drink");
+  } catch (err) {
+    console.error(err.message);
+  }
+});
+
 module.exports = router;

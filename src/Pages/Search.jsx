@@ -85,14 +85,11 @@ function Search() {
         }
       );
 
-      console.log(body);
       const parseRes = await response.json();
-      console.log(parseRes);
 
       if (parseRes === "Already in Favorites!") {
         toast.error("Already in favorites!");
       } else {
-        console.log("success");
         toast.success("Successfully Added drink to favorites!");
       }
     } catch (err) {

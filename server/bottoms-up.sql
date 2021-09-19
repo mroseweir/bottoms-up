@@ -33,6 +33,3 @@ INSERT INTO users (name, username, password) VALUES ('Michael', 'mroseweir', 'te
 
 
 DELETE FROM favorites WHERE userid = 30 AND drinkid = 12766 RETURNING *;
-
-ALTER TABLE users 
-RENAME COLUMN id TO user_id;

@@ -7,7 +7,7 @@ function Landing() {
     <div className="homeContainer">
       <Header />
       <h1 className="mainHeader">BOTTOMS UP!</h1>
-      <img src={gif2} alt="uh oh, gif didn't load" className="cocktailGlass" />
+      <img src={gif2} alt="gif didn't load" className="cocktailGlass" />
       <h2 className="randInfo">
         Unsure of what to mix up next? <br></br> The random page might have
         something that interests you.

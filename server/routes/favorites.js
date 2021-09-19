@@ -40,7 +40,7 @@ router.get("/getfavorites/:id", async (req, res) => {
     res.json(favorites.rows);
   } catch (err) {
     console.error(err.message);
-    res.status(500).json("Server Error");
+    res.status(500).json("Server Error!");
   }
 });
 

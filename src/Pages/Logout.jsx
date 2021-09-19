@@ -13,7 +13,7 @@ function Logout({ setAuth }) {
 
   function logoutFire(e) {
     e.preventDefault();
-    toast.success(`${userName} has been logged out.`);
+    toast.success(`${userName} has been logged out!`);
     localStorage.removeItem("token");
     localStorage.removeItem("userId");
     localStorage.removeItem("name");

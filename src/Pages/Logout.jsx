@@ -1,30 +1,39 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { toast } from "react-toastify";
 import Header from "../Components/Header";
 
 function Logout({ setAuth }) {
+  const [userName, setUserName] = useState("");
+  const [email, setEmail] = useState("");
+
+  useEffect(() => {
+    setUserName(localStorage.getItem("name"));
+    setEmail(localStorage.getItem("email"));
+  }, []);
+
   function logoutFire(e) {
     e.preventDefault();
+    toast.success(`${userName} has been logged out.`);
     localStorage.removeItem("token");
     localStorage.removeItem("userId");
+    localStorage.removeItem("name");
+    localStorage.removeItem("email");
     setAuth(false);
-    toast.success("User has been logged out.");
   }
 
   return (
     <div>
       <Header />
       <div className="logoutContainer">
-        <h1 className="logoutHeader">
-          You are succesfully logged in! <br></br>
-          Head on over to the random page to find a new drink! <br></br>
-          If you would like to search by a specific ingredient, Head over to the
-          search page! <br></br>
-          When you are all done, come back here and click below to logout.
-        </h1>
-        <button className="logoutBtn" onClick={(e) => logoutFire(e)}>
-          Logout
-        </button>
+        <div className="logoutBox">
+          <h1 className="logoutHeader">User Info: </h1>
+          <p>{userName}</p>
+          <p>{email}</p>
+
+          <button className="logoutBtn" onClick={(e) => logoutFire(e)}>
+            Logout
+          </button>
+        </div>
       </div>
     </div>
   );

@@ -48,11 +48,11 @@ function Random() {
       const parseRes = await response.json();
       console.log(parseRes);
 
-      if (parseRes) {
-        console.log("success");
-        toast.success("Successfully Added drink to favorites!");
+      if (parseRes === "Already in Favorites!") {
+        toast.error(`${drink[0].strDrink} is alread in favorites!`);
       } else {
-        toast.error("Already in favorites!");
+        console.log("success");
+        toast.success(`Added ${drink[0].strDrink} to favorites!`);
       }
     } catch (err) {
       console.error(err.message);

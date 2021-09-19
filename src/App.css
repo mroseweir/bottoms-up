@@ -32,7 +32,7 @@ nav {
 }
 .nav-items {
   list-style: none;
-  width: 85px;
+  width: 110px;
 }
 .nav-link {
   text-decoration: none;
@@ -399,6 +399,14 @@ nav {
   background-position: left bottom;
   transition: ease-in 0.2s;
 }
+.indCommentContainer {
+  margin: auto;
+  width: 75%;
+}
+.indComment {
+  font-family: "Abel", sans-serif;
+  font-size: 14pt;
+}
 .currentComments {
   background-color: #69b1ec;
   height: 200px;
@@ -710,14 +718,18 @@ nav {
 /* Handles styling for the Logout Page */
 /* Handles styling for the Logout Page */
 
-.logoutContainer {
-  height: 100vh;
+.logoutBox {
+  margin: auto;
+  border: 2px solid black;
+  border-radius: 5px;
+  width: 250px;
+  height: 220px;
+  margin-top: 250px;
 }
 
 .logoutHeader {
-  padding-top: 180px;
   font-family: "Abel", sans-serif;
-  line-height: 100px;
+  font-size: 18pt;
 }
 .logoutBtn {
   margin-top: 15px;

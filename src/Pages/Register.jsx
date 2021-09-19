@@ -34,9 +34,11 @@ function Register({ setAuth }) {
       if (parseRes.token) {
         localStorage.setItem("token", parseRes.token);
         localStorage.setItem("userId", parseRes.userId);
+        localStorage.setItem("name", parseRes.name);
+        localStorage.setItem("email", parseRes.email);
 
         setAuth(true);
-        toast.success("User Registered Successfully!");
+        toast.success(`Hello ${parseRes.name}, welcome to Bottoms-Up!`);
       } else {
         setAuth(false);
         toast.error(parseRes);

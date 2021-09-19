@@ -89,11 +89,11 @@ function Search() {
       const parseRes = await response.json();
       console.log(parseRes);
 
-      if (parseRes) {
+      if (parseRes === "Already in Favorites!") {
+        toast.error("Already in favorites!");
+      } else {
         console.log("success");
         toast.success("Successfully Added drink to favorites!");
-      } else {
-        toast.error("Already in favorites!");
       }
     } catch (err) {
       console.error(err.message);

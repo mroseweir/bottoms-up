@@ -68,7 +68,7 @@ function Favorites() {
             });
         }
         setFavorites(drinkArr);
-        toast.success(`Hasta La Vista, baby`);
+        toast.success(`Hasta La Vista`);
       })
       .finally(() => {
         setTimeout(() => {

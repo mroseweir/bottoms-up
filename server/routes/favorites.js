@@ -5,6 +5,15 @@ router.post("/addfavorite", async (req, res) => {
   try {
     const { userId, drinkId } = req.body;
 
+    const checkFavorite = await pool.query(
+      "SELECT FROM favorites WHERE drinkid = $1 AND userid = $2",
+      [drinkId, userId]
+    );
+
+    if (checkFavorite.rows.length !== 0) {
+      return res.status(401).json("Already in Favorites!");
+    }
+
     const newFavorite = await pool.query(
       "INSERT INTO favorites (userid, drinkid) VALUES ($1, $2) RETURNING *",
       [userId, drinkId]
@@ -12,9 +21,8 @@ router.post("/addfavorite", async (req, res) => {
 
     const favDrink = newFavorite.rows[0].drinkid;
 
-    res.json(favDrink);
+    res.status(200).json(favDrink);
   } catch (err) {
-    console.log("fail");
     console.error(err.message);
     res.status(500).json("Server Error");
   }
@@ -23,8 +31,6 @@ router.post("/addfavorite", async (req, res) => {
 router.get("/getfavorites/:id", async (req, res) => {
   try {
     const { id } = req.params;
-
-    console.log(id);
 
     const favorites = await pool.query(
       "SELECT DISTINCT drinkid FROM favorites WHERE userid = $1",
@@ -41,7 +47,6 @@ router.get("/getfavorites/:id", async (req, res) => {
 router.delete("/deletefavorite/:id/:drinkId", async (req, res) => {
   try {
     const { id, drinkId } = req.params;
-    console.log(id, drinkId);
 
     const deleteFave = await pool.query(
       "DELETE FROM favorites WHERE userid = $1 AND drinkid = $2 RETURNING *",

@@ -3,6 +3,7 @@ import Header from "../Components/Header";
 import axios from "axios";
 import { toast } from "react-toastify";
 import loadinggif from "../assets/loadinggif.gif";
+import VerifyAge from "../Components/AgeVerificationModal";
 
 function Random() {
   const baseURL = "https://www.thecocktaildb.com/api/json/v1/1";
@@ -58,6 +59,7 @@ function Random() {
 
   return (
     <div className="randomContainer">
+      <VerifyAge />
       <div>
         <Header />
         <h1 className="randomHeader">find a random drink</h1>

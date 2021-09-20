@@ -50,6 +50,53 @@ nav {
   border-radius: 4px;
 }
 
+/* Handles styling for age verification modal  */
+/* Handles styling for age verification modal  */
+/* Handles styling for age verification modal  */
+
+.verificationModalContainer {
+  position: fixed;
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+}
+
+.verificationModal {
+  width: 85vw;
+  height: 80vh;
+  margin: auto;
+  background-color: #b5dcd9;
+  border: 2px solid black;
+  border-radius: 5px;
+  box-shadow: 0 0 40px 20px rgba(0, 0, 0, 0.418);
+}
+.verificationText {
+  font-family: "Abel", sans-serif;
+  font-size: 24pt;
+  line-height: 80px;
+}
+.verificationBtns {
+  background: linear-gradient(45deg, #ffae00 40%, transparent 50%);
+  background-size: 300% 100%;
+  background-position: right bottom;
+  transition: ease-out 0.3s;
+  color: black;
+  border: 2px solid black;
+  border-radius: 5px;
+  height: 40px;
+  width: 100px;
+  margin-left: 25px;
+  margin-right: 25px;
+  font-family: "Abel", sans-serif;
+  font-size: 18pt;
+}
+.verificationBtns:hover {
+  color: black;
+  cursor: pointer;
+  background-position: left bottom;
+  transition: ease-in 0.2s;
+}
+
 /* Handles styling for the Home Page */
 /* Handles styling for the Home Page */
 /* Handles styling for the Home Page */

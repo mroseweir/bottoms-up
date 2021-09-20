@@ -4,6 +4,7 @@ import Header from "../Components/Header";
 import { toast } from "react-toastify";
 import loadinggif from "../assets/loadinggif.gif";
 import loadinggif2 from "../assets/loadinggif2.gif";
+import VerifyAge from "../Components/AgeVerificationModal";
 
 function Favorites() {
   const [favorites, setFavorites] = useState(["test"]);
@@ -143,6 +144,7 @@ function Favorites() {
   return (
     <div className="favoritesContainer">
       <Header />
+      <VerifyAge />
       <div>
         {comment ? null : (
           <div className="commentContainer">

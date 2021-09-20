@@ -3,6 +3,7 @@ import Header from "../Components/Header";
 import axios from "axios";
 import gif3 from "../assets/gif3.gif";
 import { toast } from "react-toastify";
+import VerifyAge from "../Components/AgeVerificationModal";
 
 function Search() {
   const [results, setResults] = useState(null);
@@ -105,6 +106,7 @@ function Search() {
   return (
     <div className="searchContainer">
       <Header />
+      <VerifyAge />
       <div>
         <div className="searchInputContainer">
           <select
@@ -113,7 +115,6 @@ function Search() {
             id="selectList"
             onChange={handleSelect}
           >
-            <label>Select One</label>
             <option value="https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=">
               Ingredient
             </option>

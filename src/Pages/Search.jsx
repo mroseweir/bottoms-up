@@ -11,19 +11,24 @@ function Search() {
   const [complete, setComplete] = useState(true);
   const [instructions, setInstructions] = useState(true);
   const [comment, setComment] = useState("");
+  const [optionValue, setOptionValue] = useState("");
 
-  const baseURL = "https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=";
   const searchURL = "https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=";
 
   function handleChange(a) {
     setInput(a);
   }
 
+  const handleSelect = (e) => {
+    console.log(e.target.value);
+    setOptionValue(e.target.value);
+  };
+
   function submit(input) {
     if (input === "") {
       alert("Must input an ingredient to search!");
     } else {
-      axios.get(`${baseURL}${input}`).then((res) => {
+      axios.get(`${optionValue}${input}`).then((res) => {
         if (res.data.drinks === undefined) {
           alert("No drinks found :(");
         } else {
@@ -102,10 +107,24 @@ function Search() {
       <Header />
       <div>
         <div className="searchInputContainer">
+          <select
+            name="selectList"
+            className="searchDropdown"
+            id="selectList"
+            onChange={handleSelect}
+          >
+            <label>Select One</label>
+            <option value="https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=">
+              Ingredient
+            </option>
+            <option value="https://www.thecocktaildb.com/api/json/v1/1/search.php?s=">
+              Name
+            </option>
+          </select>
           <input
             value={input}
             className="searchInput"
-            placeholder="(vodka, tequila, gin, etc..)"
+            placeholder="(vodka, tequila, margarita, etc..)"
             onChange={(e) => handleChange(e.target.value)}
           ></input>
         </div>

@@ -34,6 +34,7 @@ function Login({ setAuth }) {
         localStorage.setItem("userId", parseRes.userId);
         localStorage.setItem("name", parseRes.name);
         localStorage.setItem("email", parseRes.email);
+        localStorage.setItem("ageVerification", true);
         setAuth(true);
         toast.success(`${parseRes.name} successfully logged in!`);
       } else {

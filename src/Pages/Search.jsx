@@ -21,7 +21,6 @@ function Search() {
   }
 
   const handleSelect = (e) => {
-    console.log(e.target.value);
     setOptionValue(e.target.value);
   };
 
@@ -145,40 +144,40 @@ function Search() {
               <h1 className="searchDrinkName">{idSearch[0].strDrink}</h1>
 
               <ul className="searchIngredientsList">
-                <li>
+                <li key={idSearch[0].id}>
                   {idSearch[0].strMeasure1} {idSearch[0].strIngredient1}
                 </li>
-                <li>
+                <li key={idSearch[0].id}>
                   {idSearch[0].strMeasure2} {idSearch[0].strIngredient2}
                 </li>
-                <li>
+                <li key={idSearch[0].id}>
                   {idSearch[0].strMeasure3} {idSearch[0].strIngredient3}
                 </li>
-                <li>
+                <li key={idSearch[0].id}>
                   {idSearch[0].strMeasure4} {idSearch[0].strIngredient4}
                 </li>
-                <li>
+                <li key={idSearch[0].id}>
                   {idSearch[0].strMeasure5} {idSearch[0].strIngredient5}
                 </li>
-                <li>
+                <li key={idSearch[0].id}>
                   {idSearch[0].strMeasure6} {idSearch[0].strIngredient6}
                 </li>
-                <li>
+                <li key={idSearch[0].id}>
                   {idSearch[0].strMeasure7} {idSearch[0].strIngredient7}
                 </li>
-                <li>
+                <li key={idSearch[0].id}>
                   {idSearch[0].strMeasure8} {idSearch[0].strIngredient8}
                 </li>
-                <li>
+                <li key={idSearch[0].id}>
                   {idSearch[0].strMeasure9} {idSearch[0].strIngredient9}
                 </li>
-                <li>
+                <li key={idSearch[0].id}>
                   {idSearch[0].strMeasure10} {idSearch[0].strIngredient10}
                 </li>
-                <li>
+                <li key={idSearch[0].id}>
                   {idSearch[0].strMeasure11} {idSearch[0].strIngredient11}
                 </li>
-                <li>
+                <li key={idSearch[0].id}>
                   {idSearch[0].strMeasure12} {idSearch[0].strIngredient12}
                 </li>
               </ul>

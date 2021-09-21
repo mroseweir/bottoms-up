@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import stopgif from "../assets/stopgif.gif";
 
 function VerifyAge() {
@@ -6,14 +6,9 @@ function VerifyAge() {
 
   const [ageVerify, setAgeVerify] = useState(local);
 
-  useEffect(() => {
-    console.log(local);
-  }, []);
-
   function legalAge() {
     localStorage.setItem("ageVerification", true);
     setAgeVerify(true);
-    console.log(ageVerify);
   }
 
   return (

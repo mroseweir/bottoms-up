@@ -34,6 +34,7 @@ function Register({ setAuth }) {
         localStorage.setItem("userId", parseRes.userId);
         localStorage.setItem("name", parseRes.name);
         localStorage.setItem("email", parseRes.email);
+        localStorage.setItem("ageVerification", true);
 
         setAuth(true);
         toast.success(`Hello ${parseRes.name}, welcome to Bottoms-Up!`);

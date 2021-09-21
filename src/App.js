@@ -21,7 +21,9 @@ toast.configure();
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
-  localStorage.setItem("ageVerification", false);
+  if (localStorage == null) {
+    localStorage.setItem("ageVerification", false);
+  }
 
   const setAuth = (boolean) => {
     setIsAuthenticated(boolean);

@@ -14,6 +14,7 @@ function Favorites() {
   const [commentBody, setCommentBody] = useState(true);
   const [drinkId2, setDrinkId2] = useState(null);
   const [commentSend, setCommentSend] = useState(null);
+  const [noDrinks, setNoDrinks] = useState(true);
 
   let drinkArr = [];
 
@@ -40,6 +41,9 @@ function Favorites() {
       .finally(() => {
         setFavorites(drinkArr);
         setTimeout(() => {
+          if (drinkArr.length === 0) {
+            setNoDrinks(false);
+          }
           setLoading(false);
         }, 1700);
       });
@@ -205,7 +209,16 @@ function Favorites() {
           </div>
         ) : (
           <div>
-            <p className="favoritesHeader">All your favorites in one place!</p>
+            {noDrinks ? (
+              <p className="favoritesHeader">
+                All your favorites in one place!
+              </p>
+            ) : (
+              <p className="favoritesHeader">
+                You don't have any favorites yet!
+              </p>
+            )}
+            {/* <p className="favoritesHeader">All your favorites in one place!</p> */}
             {favorites.map((drink, index) => (
               <div key={favorites[index].id} className="indFaveContainer">
                 <div className="indFaveHeaderContainer">
@@ -219,51 +232,51 @@ function Favorites() {
                   ></img>
                   <div>
                     <ul className="faveIngredientsList">
-                      <li>
+                      <li key={favorites[index].id}>
                         {favorites[index].strMeasure1}{" "}
                         {favorites[index].strIngredient1}
                       </li>
-                      <li>
+                      <li key={favorites[index].id}>
                         {favorites[index].strMeasure2}{" "}
                         {favorites[index].strIngredient2}
                       </li>
-                      <li>
+                      <li key={favorites[index].id}>
                         {favorites[index].strMeasure3}{" "}
                         {favorites[index].strIngredient3}
                       </li>
-                      <li>
+                      <li key={favorites[index].id}>
                         {favorites[index].strMeasure4}{" "}
                         {favorites[index].strIngredient4}
                       </li>
-                      <li>
+                      <li key={favorites[index].id}>
                         {favorites[index].strMeasure5}{" "}
                         {favorites[index].strIngredient5}
                       </li>
-                      <li>
+                      <li key={favorites[index].id}>
                         {favorites[index].strMeasure6}{" "}
                         {favorites[index].strIngredient6}
                       </li>
-                      <li>
+                      <li key={favorites[index].id}>
                         {favorites[index].strMeasure7}{" "}
                         {favorites[index].strIngredient7}
                       </li>
-                      <li>
+                      <li key={favorites[index].id}>
                         {favorites[index].strMeasure8}{" "}
                         {favorites[index].strIngredient8}
                       </li>
-                      <li>
+                      <li key={favorites[index].id}>
                         {favorites[index].strMeasure9}{" "}
                         {favorites[index].strIngredient9}
                       </li>
-                      <li>
+                      <li key={favorites[index].id}>
                         {favorites[index].strMeasure10}{" "}
                         {favorites[index].strIngredient10}
                       </li>
-                      <li>
+                      <li key={favorites[index].id}>
                         {favorites[index].strMeasure11}{" "}
                         {favorites[index].strIngredient11}
                       </li>
-                      <li>
+                      <li key={favorites[index].id}>
                         {favorites[index].strMeasure12}{" "}
                         {favorites[index].strIngredient12}
                       </li>

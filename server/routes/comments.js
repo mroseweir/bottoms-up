@@ -42,8 +42,6 @@ router.delete("/deletecomments/:id/:drinkid", async (req, res) => {
       [id, drinkid]
     );
 
-    console.log(id, drinkid);
-
     res.status(200).json("deleted all comments for this drink");
   } catch (err) {
     console.error(err.message);

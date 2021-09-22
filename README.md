@@ -25,4 +25,4 @@ The App will use TheCocktailDB API as its primary source for data.
 </ul>
 
 <strong><h1>Logging In</h1></strong>
-  [logging in](./src/assets/login-gif.gif)
+![logging in](./src/assets/login-gif.gif)

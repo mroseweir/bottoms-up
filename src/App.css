@@ -645,7 +645,7 @@ nav {
 .loginContainer {
   padding-top: 5vh;
   background-color: #69b1ec;
-  height: 100vh;
+  /* height: 100vh; */
   margin: auto;
 }
 .formContainer {
@@ -681,7 +681,7 @@ nav {
   font-family: "Abel", sans-serif;
   cursor: pointer;
   background: linear-gradient(45deg, #ffae00 40%, transparent 50%);
-  background-size: 300% 100%;
+  background-size: 350% 100%;
   background-position: right bottom;
   transition: ease-out 0.3s;
 }
@@ -709,7 +709,7 @@ nav {
   padding-left: 5px;
   padding-right: 5px;
   cursor: pointer;
-  background: linear-gradient(45deg, #ffae00 40%, transparent 50%);
+  background: linear-gradient(45deg, #ffae00 40%, transparent 30%);
   background-size: 300% 100%;
   background-position: right bottom;
   transition: ease-out 0.3s;
@@ -752,9 +752,6 @@ nav {
 /* Handles styling for the Register */
 /* Handles styling for the Register */
 
-.registerPage {
-  height: 100vh;
-}
 .registerHeader {
   font-family: "Abel", sans-serif;
   font-size: 24pt;

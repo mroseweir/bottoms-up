@@ -1,4 +1,4 @@
-<strong><link href="https://vimeo.com/611938452">Video Demo</h1></link><strong>
+<strong>[Video Demo](https://vimeo.com/611938452)<strong>
 
 <strong><h1>App Summary</h1></strong>
 Bottoms Up is a mixology app allowing users to search for new cocktails and drinks they can make at home.

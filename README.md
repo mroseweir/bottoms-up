@@ -11,8 +11,7 @@ The App will use TheCocktailDB API as its primary source for data.
 <ul>
 <li>App will require users to complete age verification to access content.</li>
 <li>App will allow users to create/login to an account.</li>
-<li>App will allow users to search for drinks based off ingredients.</li>
-  <li>App will allow users to search for drinks based off drink name.</li>
+<li>App will allow users to search for drinks based off ingredients/drink name.</li>
 <li>App will allow users to favorite drinks to view in a seperate 'favorites' page.</li>
 <li>App will allow users to make comments on their favorite drinks and give them ratings.</li>
 </ul>
